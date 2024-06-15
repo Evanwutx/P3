@@ -62,7 +62,9 @@ void LoadBalancer::setActiveServers() {
     } else if (reqsPerServer < 1) {
         reqsPerServer = 1;
     }
-    
+    if (numServersActive != reqsPerServer) {
+        printf("Queue size: %d, Active server count: %d", requestQueue.size(), reqsPerServer);
+    }
     numServersActive = reqsPerServer;
 }
 
