@@ -20,10 +20,10 @@ int main() {
     logFile << "Starting Queue Size: " + to_string(atoi(numServers.c_str()) * 100) + ", Ending Queue Size: " + to_string(loadBalancer.requestQueue.size()) + "\n";
     logFile << "Task Time Range: 1-10\n";
 
-    for (auto requestLog: loadBalancer.requestLogs) {
-        logFile << "Request IP In: " + get<0>(requestLog).ipInput + 
-        ", Request IP Out: " + get<0>(requestLog).ipOutput + ", Server Number: " + to_string(get<1>(requestLog)) + 
-        ", Time received: " + to_string(get<2>(requestLog)) + "\n";
+    for (int i = 0; i < loadBalancer.requestLogs.size(); i++) {
+        logFile << "Log Number: " + to_string(i + 1) + ", Request IP In: " + get<0>(loadBalancer.requestLogs[i]).ipInput + 
+        ", Request IP Out: " + get<0>(loadBalancer.requestLogs[i]).ipOutput + ", Server Number: " + to_string(get<1>(loadBalancer.requestLogs[i])) + 
+        ", Time received: " + to_string(get<2>(loadBalancer.requestLogs[i])) + "\n";
     }
     
 

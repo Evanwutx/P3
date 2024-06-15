@@ -4,6 +4,7 @@
         "xstring": "cpp",
         "vector": "cpp",
         "queue": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "utility": "cpp"
     }
 }
