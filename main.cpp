@@ -3,7 +3,7 @@
 #include "loadbalancer.h"
 
 int main() {
-    srand(42);
+    srand(100);
     printf("Input the number of servers: ");
     string numServers;
     cin >> numServers;
@@ -13,7 +13,7 @@ int main() {
 
     LoadBalancer loadBalancer(atoi(numServers.c_str()), atoi(clockCount.c_str()));
     loadBalancer.runLoadBalancer();
-    printf("Total finished requests: %d\n", loadBalancer.requestLogs.size());
+    printf("Total finished requests: %ld\n", loadBalancer.requestLogs.size());
 
     ofstream logFile("logs.txt");
 
@@ -21,9 +21,14 @@ int main() {
     logFile << "Task Time Range: 1-10\n";
 
     for (int i = 0; i < loadBalancer.requestLogs.size(); i++) {
-        logFile << "Log Number: " + to_string(i + 1) + ", Request IP In: " + get<0>(loadBalancer.requestLogs[i]).ipInput + 
-        ", Request IP Out: " + get<0>(loadBalancer.requestLogs[i]).ipOutput + ", Server Number: " + to_string(get<1>(loadBalancer.requestLogs[i])) + 
-        ", Time received: " + to_string(get<2>(loadBalancer.requestLogs[i])) + "\n";
+        if (get<1>(loadBalancer.requestLogs[i]) != 0) {
+            logFile << "Log Number: " + to_string(i + 1) + ", Request IP In: " + get<0>(loadBalancer.requestLogs[i]).ipInput + 
+            ", Request IP Out: " + get<0>(loadBalancer.requestLogs[i]).ipOutput + ", Server Number: " + to_string(get<1>(loadBalancer.requestLogs[i])) + 
+            ", Time received: " + to_string(get<2>(loadBalancer.requestLogs[i])) + "\n";
+        } else {
+            logFile << "Log Number: " + to_string(i + 1) + ", Rejected Request, Request IP In: " + get<0>(loadBalancer.requestLogs[i]).ipInput + 
+            ", Request IP Out: " + get<0>(loadBalancer.requestLogs[i]).ipOutput + "\n";
+        }
     }
     
 

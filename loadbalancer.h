@@ -28,4 +28,6 @@ public:
     vector<tuple<Request, int, int>> requestLogs;
     int numServersActive;
     int clockCount;
+    int maxQueueSize;
+
 };
