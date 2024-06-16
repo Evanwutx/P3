@@ -1,6 +1,6 @@
-<map id="/mnt/d/CSCE412/Project 3/server.h" name="/mnt/d/CSCE412/Project 3/server.h">
-<area shape="rect" id="node1" title="Header file for the server class." alt="" coords="104,5,279,47"/>
-<area shape="rect" id="node2" href="$loadbalancer_8h.html" title="The header file for the load balancer class." alt="" coords="5,95,180,136"/>
-<area shape="rect" id="node4" href="$server_8cpp.html" title="CPP file for the server class." alt="" coords="204,95,379,136"/>
-<area shape="rect" id="node3" href="$loadbalancer_8cpp.html" title="The CPP file for the load balancer class." alt="" coords="5,184,180,225"/>
+<map id="/mnt/d/CSCE412/P3/server.h" name="/mnt/d/CSCE412/P3/server.h">
+<area shape="rect" id="node1" title="Header file for the server class." alt="" coords="162,5,365,32"/>
+<area shape="rect" id="node2" href="$loadbalancer_8h.html" title="The header file for the load balancer class." alt="" coords="13,80,258,107"/>
+<area shape="rect" id="node4" href="$server_8cpp.html" title="CPP file for the server class." alt="" coords="283,80,500,107"/>
+<area shape="rect" id="node3" href="$loadbalancer_8cpp.html" title="The CPP file for the load balancer class." alt="" coords="5,155,265,181"/>
 </map>
